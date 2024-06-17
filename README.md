@@ -26,9 +26,13 @@ In PowerAutomate (to send data to excel)
 2. Add 5 actions "initize variable"
    
 a)	first(split(last(split(string(triggerOutputs()?['body']), 'Call completed with status: ')), '\n'))
+
 b)	first(split(last(split(string(triggerOutputs()?['body']), 'Number Dialed: ')), '\n'))
+
 c)	first(split(last(split(string(triggerOutputs()?['body']), 'Call SID: ')), '\n'))
+
 d)	formatDateTime(convertTimeZone(utcNow(), 'UTC', 'AUS Eastern Standard Time'), 'dd-MM-yyyy')
+
 e)	formatDateTime(convertTimeZone(utcNow(), 'UTC', 'AUS Eastern Standard Time'), 'HH:mm')
 
 4. add "add a row into a table"
